@@ -1,4 +1,16 @@
+import { useEffect } from "react";
+import { useAlertContext } from "../contexts/AlertContext";
+
 export default function ContactUs() {
+  const { setAlertData } = useAlertContext();
+
+  useEffect(() => {
+    setAlertData({
+      type: "info",
+      message: "Se chiami entro oggi avrai il 40% di sconto",
+    });
+  }, [setAlertData]);
+
   return (
     <div className="container max-w-7xl mx-auto py-12">
       <h1 className="text-3xl font-bold text-yellow-500 mb-6 text-center">

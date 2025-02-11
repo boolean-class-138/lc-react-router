@@ -1,3 +1,6 @@
+//Contexts
+import { SearchProvider } from "../contexts/SearchContext";
+
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -5,11 +8,13 @@ import Footer from "../components/Footer";
 export default function DefaultLayout() {
   return (
     <>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+      <SearchProvider>
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </SearchProvider>
     </>
   );
 }
